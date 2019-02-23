@@ -3,7 +3,7 @@ var path = require("path");
 
 var app = express();
 
-var port = process.env.port || 5000;
+var port = process.env.PORT || 5000;
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -14,6 +14,6 @@ require("./app/routing/htmlRoutes")(app);
 
   
 
-app.listen(port, function(){
-console.log("kidus your app listening on port:" + port);
+app.listen(PORT, function(){
+console.log("kidus your app listening on port:" + PORT);
 });
