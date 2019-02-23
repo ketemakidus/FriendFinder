@@ -15,20 +15,24 @@ var newfriends= [
         1
       ]
   },
-{
 
-  name:"",
-  photo:"",
-  scores: 
-  [
+  {
+
+  name:"kiki",
+  photo:"https://www.google.com/search?q=kiki&rlz=1C1CHBF_enUS823US823&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiMs-Gpys7gAhWFGt8KHSA2Cm8Q_AUIDygC&biw=1455&bih=717#",
+  scores:[1,
+    5,
+    5,
+    4,
+    3,
+    1,
+    2,
+    3,
+    4,
+    5,
+    1,
   ]
-},{
-
-name:"",
-photo:"",
-scores:
-[
-
+}
 ]
-},
-]
+
+module.exports = newfriends;
