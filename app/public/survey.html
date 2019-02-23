@@ -25,6 +25,7 @@ background-color: brown
       <hr>
   
       <h3><strong>About You</strong></h3>
+
       <h4>Name</h4>
       <input type="text" id="name" class="form-control" required="">
   
@@ -46,7 +47,7 @@ background-color: brown
   
       <h3><strong>Question 2</strong></h3>
       <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
-      <select class="chosen-select" id="#Question2">
+      <select class="chosen-select" id="Question2">
         <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -177,7 +178,7 @@ background-color: brown
 			event.preventDefault();
 
      var newfriend = {
-       name: $("#id").val(),
+       name: $("#name").val(),
        photo: $("#photo").val(),
        scores:[
        $("#Question1").val(),
@@ -194,21 +195,14 @@ background-color: brown
      }
       console.log(newfriend);
 
-      $.post("/apifriends", newfriend)
-      .done(function(data){
-$("#userMatch").html(data.matchName);
-$("userMatchImage").attr("src",data.matchImage)
-   $("#exampleModal").modal("open");
+      // $.post("/apifriends", newfriend)
 
-      });
-
-      
+      // $.ajax({url:"/api/friends", method:"get"})
+      // .then(function(waitData){
+      //   console.log(newfriend);
+      // })
    });
 
-
-
-  
-  
   </script>
 </body>
   </html>
