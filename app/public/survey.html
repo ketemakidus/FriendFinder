@@ -199,13 +199,8 @@
       $.post("/api/friends", newfriend, function (data) {
 
         console.log(data.matcheduser);
-        $("#match-name").text(data.matcheduser.name);
-        $("#match-img").attr("src", matcheduser.photo);
-        $("#results-modal").modal("toggle");
-      });
-
     });
-
+  });
 
   </script>
 </body>
