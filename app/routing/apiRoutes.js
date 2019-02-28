@@ -9,16 +9,17 @@ module.exports = function(app) {
    res.json(surveydata);
  });
 
+
+
+
+
+	// Add new friend entry
 	app.post('/api/friends', function(req, res) {
 
     surveydata.push(req.body)
 
-		res.json(surveydata);
-		
-		var newfriend = req.body;
+    res.json(surveydata);
+	
+	});
+};
 
-		var userResponses = newfriend.scores;
-
-		var matchName = '';
-		var matchImage = '';
-		
