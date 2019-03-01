@@ -4,7 +4,6 @@ var friends = require('../data/friends.js');
 
 module.exports = function (app) {
 	
-	// console.log(friends[0])
 	app.get('/api/friends', function (req, res) {
 		console.log('get');
 		res.json(friends);
@@ -17,10 +16,16 @@ module.exports = function (app) {
 		var userResponses = newfriend.scores;
 
 		var matchName = '';
+
 		var matchImage = '';
+
 		var totalDifference = 10000;
-		console.log('matchName', matchName);
-		console.log(friends[i])
+
+		console.log(matchName);
+
+		console.log('matchImage', matchImage);
+
+		// console.log(friends[i])
 
 
 		for (var i = 0; i < friends.length; i++) {
@@ -35,14 +40,13 @@ module.exports = function (app) {
 			if (diff < totalDifference) {
 
 				totalDifference = diff;
-				matchName = friends[i].name;
+				matchName = friends[i].Name;
 				matchImage = friends[i].photo;
 			}
 		}
 		
-		// console.log(matchName);
 		friends.push(newfriend);
 
 		res.json({ status: 'OK', matchName: matchName, matchImage: matchImage });
 	});
-};
+}
