@@ -167,7 +167,7 @@
             <h5 class="modal-title" id="exampleModalLabel">Best match</h5>
             <div class="modal-body">
               <h2 id="modal-Name"></h2>
-              <img id="modal-img" src="" alt="">
+              <img id="modal-photo" src="" alt="">
             </div>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -205,15 +205,15 @@
 
       console.log(newfriend);
 
-      $.post("./api/friends", newfriend, function (data) {
+      $.post("/api/friends", newfriend, function (data) {
 
         console.log(data); 
 
         $("#modal-Name").text(data.matchName);
 
-        $("#modal-img").attr("src",data.matchphoto);
+        $("#modal-photo").attr("src",data.matchImage);
 
-        $("#exampleModal").modal("toggle");
+        $(".modal-body").modal("toggle");
       })
     });
 

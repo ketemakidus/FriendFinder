@@ -1,20 +1,22 @@
-var ex = require("express");
-var bp = require("body-parser");
-var p = require("path");
+var express = require('express');
+var bodyParser = require('body-parser');
+var path = require('path');
 
-var app = ex();
+var app = express();
+
 var PORT = process.env.PORT || 5000;
 
-app.use(bp.urlencoded({
-    extended: true
-}));
-app.use(bp.json());
+app.use(express.static(path.join(__dirname, './app/public')));
 
-app.use(ex.static(p.join(__dirname, "/app/public")));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-require("./app/routing/apiRoutes.js")(app);
-require("./app/routing/htmlRoutes.js")(app);
 
-app.listen(PORT, function () {
-    console.log("kidus you app is listing on " + PORT);
+app.use(bodyParser.text());
+
+require(path.join(__dirname, './app/routing/apiRoutes'))(app);
+require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
+
+app.listen(PORT, function() {
+  console.log('Friend Finder app is listening on PORT: ' + PORT);
 });
