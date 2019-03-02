@@ -1,7 +1,7 @@
 var newfriends= [
   {
       Name:"Ahmed",
-      photo: "https://www.kikishop.fr/427/petit-kiki-articule.jpg",
+      photo: "http://img.timeinc.net/time/2011/poy_web_extras/ahmed_harara.jpg",
       scores:[
         5,
         1,
